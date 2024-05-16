@@ -6,8 +6,12 @@ html {
   }
 
   @media (max-width: 768px) {
-    font-size: 40%;
+    font-size: 55%;
   }
+
+  // @media (max-width: 576px) {
+  //   font-size: 34%;
+  // }
 }
 
 html,
@@ -17,8 +21,8 @@ body {
 
 body {
   font-weight: 400;
-  font-size: 16px;
-  line-height: 28px;
+  font-size: rem(16);
+  @include line-height(16, 28);
   color: #505050;
   font-family: 'Lato';
   // letter-spacing: 0.6px;
@@ -36,11 +40,6 @@ body {
   border: 0;
 }
 
-/*
-.title {
-    @extend %title;
-}*/
-
 .main {
   flex-grow: 1;
 }
@@ -56,26 +55,26 @@ body {
 }
 
 .svg {
-  margin-right: 5px;
+  margin-right: rem(5);
 }
 
 .title {
   color: #4E5665;
   font-family: Georgia;
-  font-size: 32px;
+  font-size: rem(35);
   @include line-height(31, 38);
   letter-spacing: -2.5px;
 }
 
 .section {
-  @include adaptiveValue("padding-top", 100, 50);
-  @include adaptiveValue("padding-bottom", 100, 50);
+  @include adaptiveValue("padding-top", 100, 20);
+  @include adaptiveValue("padding-bottom", 100, 20);
 }
 
 .logo {
   &__header {
-    width: 315px;
-    height: 80px;
+    width: rem(315);
+    height:rem(80);
     object-fit: cover;
   }
 }
@@ -100,70 +99,8 @@ body {
   }
 }
 
-// .video {
-//     background-position: center;
-//     background-repeat: no-repeat;
-//     background-size: cover;
-//     display: block;
-//     position: relative;
-//     border-radius: 6px;
-//     transition: color 0.5s;
-
-//     &:focus {
-//         color: $focus;
-//     }
-
-//     &:hover {
-//         .video__icon {
-//             transition: background-color 0.5s;
-//             background-color: $red;
-//         }
-//     }
-
-//     &:active {
-//         color: $active;
-//     }
-
-//     &__icon {
-//         position: absolute;
-//         top: 50%;
-//         left: 50%;
-//         transform: translateX(-50%);
-//         width: 65px;
-//         height: 40px;
-//         background: rgba(0, 0, 0, .55);
-//         border-radius: 6px;
-//         position: relative;
-
-//         &::before {
-//             content: "";
-//             position: absolute;
-//             top: 30%;
-//             left: 50%;
-//             transform: translateX(-50%);
-//             z-index: 100;
-//             border-color: transparent transparent transparent $white;
-//             border-style: solid;
-//             border-width: 9.5px 0 9.5px 17px;
-//         }
-//     }
-// }
-
 * {
   // scrollbar-width: auto;
   scrollbar-color: #C0C0C0 #EFEFF1;
   //для потдержки скрола в фарфокс
 }
-
-// footer__link--indent
-
-// [class*="__container"] {
-//     background-color: red;
-// }
-
-// [class*="__text"] {
-//     @media (max-width: 768px) {
-//         font-size: 16px;
-//     }
-// надо будет еще протестить не грузит ли оно сайт
-// }

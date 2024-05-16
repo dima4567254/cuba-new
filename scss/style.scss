@@ -13,7 +13,10 @@
   background-size: cover;
   background-repeat: no-repeat;
   height: 93vh;
-  padding: 30px;
+  @include adaptiveValue("padding-bottom", 30, 20);
+  @include adaptiveValue("padding-top", 30, 20);
+  @include adaptiveValue("padding-left", 30, 20);
+  @include adaptiveValue("padding-right", 30, 20);
   background-color: rgb(255, 255, 255);
 
   &__wrapper {
@@ -30,32 +33,40 @@
 
   &__title {
     margin: auto;
-    font-size: 200px;
+    font-size: rem(200);
     font-weight: 700;
+
+    @media (max-width: 576px) {
+      font-size: 11rem;
+    }
   }
 
   &__text {
-    font-size: 24px;
+    font-size: rem(24);
     font-weight: 400;
-    margin-bottom: -12px;
+    // margin-bottom: -8px;
+    @include adaptiveValue("margin-bottom", -8, 0);
     position: relative;
     align-items: center;
-    margin-bottom: -12px;
     display: inline-flex;
     white-space: nowrap;
+
+    @media (max-width: 576px) {
+      font-size: 1.6rem;
+    }
 
     &::before {
       content: "";
       border-top: 2px solid red;
       width: 100%;
-      margin-right: 30px;
+      @include adaptiveValue("margin-right", 30, 20);
     }
 
     &::after {
       content: "";
       border-top: 2px solid red;
       width: 100%;
-      margin-left: 30px;
+      @include adaptiveValue("margin-left", 30, 20);
     }
   }
 }
@@ -63,6 +74,14 @@
 .header {
   border-bottom: 1px solid #D0D4D8;
   margin-bottom: 100px;
+  @include adaptiveValue("margin-bottom", 100, 40);
+
+  @media (max-width: 768px) {
+    display: flex;
+    overflow: scroll;
+    // писать родителю
+    // добавить в снипеты
+  }
 }
 
 
@@ -73,15 +92,21 @@
     padding: 20px 0;
     gap: 15px;
     color: rgb(144, 144, 144);
-    font-size: 14px;
+    font-size: rem(14);
+    @include line-height(19, 14);
     font-weight: 700;
-    line-height: 19px;
     letter-spacing: 0px;
+    outline-color: #000;
+    outline-offset: 5px;
 
+    @media (max-width: 1200px) {
+      font-size: 1.8rem;
+    }
   }
 
   &__item {
     padding: 7px 19px 12px 8px;
+    white-space: nowrap;
 
     &--active {
       color: #4E5665;
@@ -110,25 +135,23 @@
 
   &__title {
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: rem(15);
   }
 
   &__text {
     color: #4E5665;
-    font-size: 16px;
-    line-height: 28px;
+    font-size: rem(16);
+    @include line-height(16, 28);
     letter-spacing: 0.8px;
   }
 
   &__link {
     color: #ECB84C;
     font-weight: 700;
-    line-height: 28px;
-    // font-size: 16px;
     letter-spacing: 0px;
     text-align: right;
     display: block;
-    margin-bottom: 35px;
+    @include adaptiveValue("margin-bottom", 35, 20);
     transition: color .5s;
 
     &:focus {
@@ -147,29 +170,41 @@
   &__items {
     display: flex;
     justify-content: space-around;
+
+    @media (max-width: 576px) {
+      display: block;
+    }
   }
 
   &__item {
     text-align: center;
+
+    @media (max-width: 576px) {
+
+      &:not(:last-child) {
+        margin-bottom: rem(20);
+      }
+    }
+
+
   }
 
   &__svg {
-    margin-bottom: 25px;
+    @include adaptiveValue("margin-bottom", 25, 20);
   }
 
   &__numbers {
     color: #4E5665;
-    font-size: 22px;
+    @include line-height(22, 30);
     font-weight: 700;
-    line-height: 30px;
     letter-spacing: 0px;
   }
 
   &__subtext {
     color: #909090;
-    font-size: 14px;
+    font-size: rem(14);
     font-weight: 700;
-    line-height: 17px;
+    @include line-height(17, 14);
     letter-spacing: 0px;
   }
 }
@@ -177,16 +212,27 @@
 .about {
   &__title {
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: rem(10);
   }
 
   &__text {
     letter-spacing: 0.9px;
-    margin-bottom: 70px;
+    @include adaptiveValue("margin-bottom", 70, 20);
   }
 
   &__images {
     position: relative;
+    display: flex;
+
+    @include adaptiveValue("margin-bottom", 100, 40);
+
+    &--beach {
+      justify-content: start;
+    }
+
+    &--heritage {
+      justify-content: end;
+    }
   }
 
   &__img {
@@ -194,7 +240,6 @@
     height: rem(430);
     object-fit: cover;
     display: block;
-    margin-bottom: rem(100);
 
     &--beach {
       margin-right: auto;
@@ -207,12 +252,13 @@
 
   &__box {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%); //только по горизонтали
-    padding: 30px 40px 20px 40px;
+    @include adaptiveValue("padding-bottom", 20, 10);
+    @include adaptiveValue("padding-top", 30, 10);
+    @include adaptiveValue("padding-left", 40, 20);
+    @include adaptiveValue("padding-right", 40, 20);
     box-shadow: 0px 2px 40px 0px rgba(0, 0, 0, 0.2);
     background: rgb(255, 255, 255);
-    max-width: 470px;
+    max-width: rem(470);
     width: 100%;
 
     &::before {
@@ -242,11 +288,13 @@
     }
 
     &--beach {
-      right: 0;
+      transform: translateX(105%) translateY(-50%); //только по вертикали ниже другое
+      top: 50%;
     }
 
     &--heritage {
-      left: 0;
+      transform: translateX(-105%) translateY(-50%); //только по вертикали ниже другое
+      top: 50%;
     }
   }
 
@@ -254,7 +302,7 @@
     color: #4E5665;
     font-family: Georgia;
     font-size: rem(24);
-    @include line-height(24, 25);
+    @include line-height(25, 24);
     letter-spacing: 0px;
     margin-bottom: rem(20);
   }
@@ -267,19 +315,18 @@
 
 .cadillac {
   &__title {
-    margin-bottom: rem(35);
+    @include adaptiveValue("margin-bottom", 35, 20);
     text-align: center;
   }
 
   &__img {
-    width: 1170px;
-    height: 410px;
+    width: rem(1170);
+    height: rem(410);
     object-fit: contain;
-    margin-bottom: 45px;
+    @include adaptiveValue("margin-bottom", 45, 20);
   }
 
   &__text {
-    line-height: 28px;
     max-width: 975px;
     margin: 0 auto;
     letter-spacing: 0.8px;
@@ -290,46 +337,28 @@
 .picture {
   &__title {
     text-align: center;
-    margin-bottom: rem(40);
+    @include adaptiveValue("margin-bottom", 40, 20);
   }
 
   &__text {
     color: #505050;
-    letter-spacing: 0px;
-    margin-bottom: rem(105);
+    letter-spacing: 0.8px;
+    @include adaptiveValue("margin-bottom", 105, 20);
   }
 
   &__slider {
-    margin-bottom: rem(35);
+    @include adaptiveValue("margin-bottom", 35, 20);
     display: block;
-    max-width: 640px;
+    max-width: rem(640);
     margin: 0 auto;
   }
 
   &__img {
-    width: 640px;
-    height: 480px;
+    width: rem(640);
+    height: rem(480);
     object-fit: cover;
-    // margin: 0 auto;
-    // display: flex;
-    // justify-content: center;
-  }
-
-  &__item {
-    // width: 100%;
-    // display: inline-flex;
-    // justify-content: center;
-    // /* text-align: center; */
-    // /* margin: 0 auto; */
-    // position: relative;
   }
 }
-
-// .slick-slider {
-//   // width: 80%; /* Ширина слайдера */
-//   // margin: 0 auto; /* Центрирование слайдера по горизонтали */
-//   position: relative; /* Относительное позиционирование для стрелок */
-// }
 
 .slick-prev,
 .slick-next {
@@ -394,7 +423,8 @@
 }
 
 .footer {
-  padding: 50px 0px 30px 0px;
+  @include adaptiveValue("padding-bottom", 30, 20);
+  @include adaptiveValue("padding-top", 40, 20);
   background-color: #F8F8F8;
   border-top: 1px solid #E7E9EB;
 
@@ -403,32 +433,27 @@
   }
 
   &__wrapper {
-    padding-top: 10px;
+    padding-top: rem(10);
     display: flex;
     justify-content: space-between;
     @include adaptiveValue("gap", 70, 20);
-    margin-bottom: 40px;
+    @include adaptiveValue("margin-bottom", 30, 20);
   }
-
-  &__item {}
 
   &__title {
     color: #4E5665;
-    font-size: 15px;
+    font-size: rem(15);
     font-weight: 700;
-    line-height: 20px;
-    margin-bottom: 20px;
+    @include line-height(15, 20);
+    margin-bottom: rem(20);
     text-transform: uppercase;
   }
 
-  &__items {}
-
   &__link {
     color: #4E5665;
-    font-size: 14px;
-    font-weight: 400;
+    font-size: rem(14);
     line-height: 19px;
-    letter-spacing: 0px;
+    letter-spacing: 0.7px;
     transition: color .5s;
     display: flex;
     align-items: center;
@@ -448,14 +473,14 @@
   }
 
   &__svg {
-    margin-right: 10px;
+    margin-right: rem(10);
   }
 }
 
 .copy {
   text-align: center;
   color: #505050;
-  font-size: 14px;
-  line-height: 19px;
+  font-size: rem(14);
+  @include line-height(14, 19);
   letter-spacing: 0px;
 }

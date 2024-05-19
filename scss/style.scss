@@ -223,8 +223,15 @@
   &__images {
     position: relative;
     display: flex;
-
     @include adaptiveValue("margin-bottom", 100, 40);
+
+    @media (max-width: 768px) {
+
+      &--heritage,
+      &--beach {
+        justify-content: center;
+      }
+    }
 
     &--beach {
       justify-content: start;
@@ -233,6 +240,7 @@
     &--heritage {
       justify-content: end;
     }
+
   }
 
   &__img {
@@ -272,6 +280,10 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
+
+      @media (max-width: 992px) {
+        display: none;
+      }
     }
 
     &::after {
@@ -285,16 +297,45 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
+
+      @media (max-width: 992px) {
+        display: none;
+      }
+
     }
 
     &--beach {
       transform: translateX(105%) translateY(-50%); //только по вертикали ниже другое
       top: 50%;
+
+      @media (max-width: 992px) {
+        transform: translateX(75%) translateY(-50%);
+      }
+
+      @media (max-width: 768px) {
+        transform: translateX(12%) translateY(-50%);
+      }
+
+      @media (max-width: 576px) {
+        transform: translateX(0%) translateY(-50%);
+      }
     }
 
     &--heritage {
       transform: translateX(-105%) translateY(-50%); //только по вертикали ниже другое
       top: 50%;
+
+      @media (max-width: 992px) {
+        transform: translateX(-75%) translateY(-50%);
+      }
+
+      @media (max-width: 768px) {
+        transform: translateX(-12%) translateY(-50%);
+      }
+
+      @media (max-width: 576px) {
+        transform: translateX(0%) translateY(-50%);
+      }
     }
   }
 
@@ -315,8 +356,12 @@
 
 .cadillac {
   &__title {
-    @include adaptiveValue("margin-bottom", 35, 20);
+    @include adaptiveValue("margin-bottom", 65, 20);
     text-align: center;
+  }
+
+  &__box {
+    position: relative;
   }
 
   &__img {
@@ -324,15 +369,120 @@
     height: rem(410);
     object-fit: contain;
     @include adaptiveValue("margin-bottom", 45, 20);
+
+    @media (max-width: 992px) {
+      height: rem(315);
+    }
+
+    @media (max-width: 768px) {
+      height: rem(220);
+    }
+
+    @media (max-width: 576px) {
+      height: rem(120);
+    }
+  }
+
+  &__item {
+    position: absolute;
+    cursor: pointer;
+    line-height: 0;
+
+    @media (max-width: 992px) {
+      display: none;
+    }
+
+    &::before {
+      content: "";
+      opacity: 0;
+      overflow: hidden;
+      position: absolute;
+      bottom: 38%;
+      left: 46%;
+      height: 125px;
+      width: 245px;
+      background-image: url('../images/sprite/line.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+
+    }
+
+    &:focus {
+      color: $focus;
+    }
+
+    &:hover {
+      &::before {
+        transition: opacity .5s, overflow .5s;
+        opacity: 1;
+        overflow: visible;
+      }
+
+      .cadillac__text {
+        opacity: 1;
+        overflow: visible;
+      }
+    }
+
+    &:active {
+      color: $active;
+    }
+
+    &--1 {
+      top: 33%;
+      left: 12%;
+    }
+
+    &--2 {
+      top: 33%;
+      left: 45%;
+
+      @media (max-width: 992px) {
+        left: 37%;
+      }
+    }
+
+    &--3 {
+      top: 21%;
+      right: 30%;
+    }
+
+    &--4 {
+      right: 24.5%;
+      bottom: 31%;
+    }
+  }
+
+  &__images {
+    width: 33px;
+    height: 33px;
   }
 
   &__text {
+    position: absolute;
+    top: -367%;
+    right: -681%;
+    white-space: nowrap;
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity .5s, overflow .5s;
+
+    @media (max-width: 992px) {
+      display: none;
+      // right: -606%;
+    }
+  }
+
+  &__subtext {
     max-width: 975px;
     margin: 0 auto;
     letter-spacing: 0.8px;
   }
-
 }
+
+// проверить еше раз блок cadillac
 
 .picture {
   &__title {
@@ -392,7 +542,7 @@
   }
 
   &:hover {
-    opacity: 0.7;
+    opacity: .7;
     background-color: black;
   }
 

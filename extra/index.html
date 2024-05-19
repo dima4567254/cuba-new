@@ -10,7 +10,9 @@
   <title>Куба</title>
   <link rel="stylesheet" href="css/style.min.css?_v=20230727015200">
 </head>
-
+<!-- about по коду передалть что бы было без модификаторов 
+по внешнему виду не красиво
+-->
 <!-- остановился на главной ксс -->
 
 <body class="body">
@@ -181,14 +183,37 @@
         </div>
       </div>
     </section>
-<!-- 
+
     <section class="cadillac section">
       <div class="container container--big">
         <h2 class="cadillac__title title">
           Кубинский Кадиллак
         </h2>
-        <img class="cadillac__img" src="images/car.png" alt="Машина">
-        <div class="cadillac__text">
+        <div class="cadillac__images">
+          <picture><source srcset="images/dist/car.avif" type="image/avif"><source srcset="images/dist/car.webp" type="image/webp"><img class="cadillac__img" src="images/dist/car.png" alt="Машина"></picture>
+          <div class="cadillac__text">Откидная крыша</div>
+          <svg class="cadillac__svg cadillac__svg--dot1" width="32px" height="32px" fill="#bcbcbc">
+            <use xlink:href="images/sprite.svg#dot">
+            </use>
+          </svg>
+          <svg class="cadillac__svg cadillac__svg--dot2" width="32px" height="32px" fill="#bcbcbc">
+            <use xlink:href="images/sprite.svg#dot">
+            </use>
+          </svg>
+          <svg class="cadillac__svg cadillac__svg--dot3" width="32px" height="32px" fill="#bcbcbc">
+            <use xlink:href="images/sprite.svg#dot">
+            </use>
+          </svg>
+          <svg class="cadillac__svg cadillac__svg--dot4" width="32px" height="32px" fill="#bcbcbc">
+            <use xlink:href="images/sprite.svg#dot">
+            </use>
+          </svg>
+          <!-- <svg class="cadillac__svg cadillac__svg--line" width="245px" height="120px" fill="#bcbcbc">
+            <use xlink:href="images/sprite.svg#line">
+            </use>
+          </svg> -->
+        </div>
+        <div class="cadillac__subtext">
           <p>
             Американское торговое эмбарго с Кубой в 1960 году привело к немедленному отделению тысяч автомобилей 1940-х
             и
@@ -199,7 +224,7 @@
         </div>
       </div>
     </section>
-
+    <!-- 
     <section class="picture section">
       <div class="container">
         <h2 class="picture__title title">
@@ -372,7 +397,7 @@
 </a>
 -->
 
-  <!--
+    <!--
   <form class="footer-top__form">
       <label class="sr-only" for="email">
           Enter your email
@@ -390,8 +415,8 @@
   </form>
 
 -->
-  <script src="js/avif.js?_v=20240516225829"></script>
-  <script src="js/main.min.js?_v=20230727015200"></script>
+    <script src="js/avif.js?_v=20240519214526"></script>
+    <script src="js/main.min.js?_v=20230727015200"></script>
 
 </body>
 

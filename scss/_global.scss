@@ -5,6 +5,10 @@ html {
     font-size: 50%;
   }
 
+  @media (max-width: 992px) {
+    font-size: 61%;
+  }
+
   @media (max-width: 768px) {
     font-size: 55%;
   }
@@ -61,8 +65,8 @@ body {
 .title {
   color: #4E5665;
   font-family: Georgia;
-  font-size: rem(35);
-  @include line-height(31, 38);
+  font-size: rem(32);
+  @include line-height(32, 38);
   letter-spacing: -2.5px;
 }
 
@@ -74,7 +78,7 @@ body {
 .logo {
   &__header {
     width: rem(315);
-    height:rem(80);
+    height: rem(80);
     object-fit: cover;
   }
 }

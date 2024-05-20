@@ -1,27 +1,27 @@
 $('.picture__slider').slick({
-  // dots: true,
+  // dots: false,
   // arrows: false,
-  responsive: [
-    {
-      breakpoint: 1150,
-      settings: {
-        slidesToShow: 4,
-      }
-    },
-    {
-      breakpoint: 1000,
-      settings: {
-        slidesToShow: 3,
-      }
-    },
-    {
-      breakpoint: 620,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-      }
-    },
-  ]
+  // responsive: [
+  //   {
+  //     breakpoint: 1150,
+  //     settings: {
+  //       slidesToShow: 4,
+  //     }
+  //   },
+  //   {
+  //     breakpoint: 1000,
+  //     settings: {
+  //       slidesToShow: 3,
+  //     }
+  //   },
+  //   {
+  //     breakpoint: 620,
+  //     settings: {
+  //       slidesToShow: 2,
+  //       slidesToScroll: 2,
+  //     }
+  //   },
+  // ]
 });
 
 

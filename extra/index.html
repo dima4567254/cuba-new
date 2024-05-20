@@ -145,7 +145,7 @@
             <source srcset="images/dist/heritage.webp" type="image/webp"><img class="about__img about__img--heritage"
               src="images/dist/heritage.jpeg" alt="Историческое наследие">
           </picture>
-          <div class="about__box about__box--heritage">
+          <div class="about__images about__images--heritage">
             <h3 class="about__subtitle title">
               Историческое наследие
             </h3>
@@ -167,7 +167,7 @@
             <source srcset="images/dist/beach.webp" type="image/webp"><img class="about__img about__img--beach"
               src="images/dist/beach.jpeg" alt="Удивительные пляжи">
           </picture>
-          <div class="about__box about__box--beach">
+          <div class="about__images about__images--beach">
             <h3 class="about__subtitle title">
               Удивительные пляжи
             </h3>
@@ -189,29 +189,28 @@
         <h2 class="cadillac__title title">
           Кубинский Кадиллак
         </h2>
-        <div class="cadillac__images">
-          <picture><source srcset="images/dist/car.avif" type="image/avif"><source srcset="images/dist/car.webp" type="image/webp"><img class="cadillac__img" src="images/dist/car.png" alt="Машина"></picture>
-          <div class="cadillac__text">Откидная крыша</div>
-          <svg class="cadillac__svg cadillac__svg--dot1" width="32px" height="32px" fill="#bcbcbc">
-            <use xlink:href="images/sprite.svg#dot">
-            </use>
-          </svg>
-          <svg class="cadillac__svg cadillac__svg--dot2" width="32px" height="32px" fill="#bcbcbc">
-            <use xlink:href="images/sprite.svg#dot">
-            </use>
-          </svg>
-          <svg class="cadillac__svg cadillac__svg--dot3" width="32px" height="32px" fill="#bcbcbc">
-            <use xlink:href="images/sprite.svg#dot">
-            </use>
-          </svg>
-          <svg class="cadillac__svg cadillac__svg--dot4" width="32px" height="32px" fill="#bcbcbc">
-            <use xlink:href="images/sprite.svg#dot">
-            </use>
-          </svg>
-          <!-- <svg class="cadillac__svg cadillac__svg--line" width="245px" height="120px" fill="#bcbcbc">
-            <use xlink:href="images/sprite.svg#line">
-            </use>
-          </svg> -->
+        <div class="cadillac__box">
+          <picture>
+            <source srcset="images/dist/car.avif" type="image/avif">
+            <source srcset="images/dist/car.webp" type="image/webp">
+            <img class="cadillac__img" src="images/dist/car.png" alt="Машина">
+          </picture>
+          <div class="cadillac__item cadillac__item--1">
+            <img class="cadillac__images" src="images/sprite/dot.svg" alt="">
+            <div class="cadillac__text">Откидная крыша</div>
+          </div>
+          <div class="cadillac__item cadillac__item--2">
+            <img class="cadillac__images" src="images/sprite/dot.svg" alt="">
+            <div class="cadillac__text">Откидная крыша</div>
+          </div>
+          <div class="cadillac__item cadillac__item--3">
+            <img class="cadillac__images" src="images/sprite/dot.svg" alt="">
+            <div class="cadillac__text">Откидная крыша</div>
+          </div>
+          <div class="cadillac__item cadillac__item--4">
+            <img class="cadillac__images" src="images/sprite/dot.svg" alt="">
+            <div class="cadillac__text">Откидная крыша</div>
+          </div>
         </div>
         <div class="cadillac__subtext">
           <p>
@@ -391,7 +390,7 @@
 
 
   <!--
-<a class="video" data-fancybox style="background-image: url('images/video-bg.jpg')"
+<a class="video" data-fancyimages style="background-image: url('images/video-bg.jpg')"
     href="https://www.youtube.com/watch?v=Y2vZlSbw3iA">
     <span class="sr-only">play video</span>
 </a>
@@ -406,7 +405,7 @@
           oninvalid="this.setCustomValidity('fill in this field!')">
       <button class="footer-top__btn" type="submit">
           <svg class="footer__svg" xmlns="http://www.w3.org/2000/svg" fill="#ffffff"
-              xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="17" viewBox="0 0 20 17">
+              xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="17" viewimages="0 0 20 17">
               <image id="send" width="20" height="17"
                   xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAABW0lEQVQ4jaWUTytEURjGf1NiJDTjfzNlYWFhKysbvoaV72LpOyhSIikmyUiztRKmsBYz2SgNOz169d66/5sZT91u9557fud5n/fcU5B0ApwBF8Ab/5QBO8AI8AAY/Bi47xsrqaWo2pL2Ja1LGpRELxcOSNOPpIakTUmVbqFWchuYSViP6g6oAQdAMzEaK/krxV2W3j2ONUnFLId7wAJQAqaAsjUrsXJSDcDm1oGXYLTwFySMAhNeukHngKo/230emAbGgaEYuulxHAK3ATBPw76YOV8EloFVYAUYCM2zPbwVfmGrT7qTwGUFmHWXVR+3aoohWAu4BI4sBnu5DSx5hmWfVMpxHOjJM6xFfgRJ3xkdTVNH0rWkDUljaV02h5+eU55egXMvq57zXSTUND0DO8Ap8Jgy3hXQDosbYNdPoY9uQGFgsK+sWwawsq56gcSBdmxZLrYxrcT+BfwCdYhXWkZ0abIAAAAASUVORK5CYII=" />
           </svg>
@@ -415,7 +414,7 @@
   </form>
 
 -->
-    <script src="js/avif.js?_v=20240519214526"></script>
+    <script src="js/avif.js?_v=20240520180842"></script>
     <script src="js/main.min.js?_v=20230727015200"></script>
 
 </body>
